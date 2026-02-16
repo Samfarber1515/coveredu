@@ -171,8 +171,48 @@
     color: var(--text-light);
     line-height: 1.6;
     max-width: 500px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     animation: fadeUp 0.6s ease-out 0.25s both;
+  }
+  .hero-chaos {
+    width: min(980px, 100%);
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+    margin-bottom: 34px;
+    animation: fadeUp 0.6s ease-out 0.3s both;
+  }
+  .chaos-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 12px;
+    text-align: left;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+  }
+  .chaos-card svg {
+    width: 100%;
+    height: 82px;
+    display: block;
+    margin-bottom: 8px;
+  }
+  .chaos-card strong {
+    display: block;
+    font-size: 13px;
+    color: var(--text);
+    margin-bottom: 3px;
+  }
+  .chaos-card span {
+    font-size: 12px;
+    color: var(--text-light);
+    line-height: 1.4;
+  }
+  @media (max-width: 900px) {
+    .hero-chaos { grid-template-columns: 1fr 1fr; }
+    .hero-chaos .chaos-card:first-child { grid-column: 1 / -1; }
+  }
+  @media (max-width: 560px) {
+    .hero-chaos { grid-template-columns: 1fr; }
   }
   .hero-actions {
     display: flex; gap: 12px; flex-wrap: wrap;
@@ -214,11 +254,6 @@
   .trust-item {
     display: flex; align-items: center; gap: 6px;
     font-size: 13px; color: var(--text-light); font-weight: 500;
-  }
-  .trust-item a {
-    color: inherit;
-    text-decoration: underline;
-    text-underline-offset: 2px;
   }
   .trust-item .ti { font-size: 16px; }
 
@@ -278,14 +313,6 @@
     line-height: 1.55;
     margin-bottom: 8px;
   }
-  .spf-joke {
-    max-width: 1000px;
-    margin: 14px auto 0;
-    text-align: center;
-    font-size: 13px;
-    color: var(--text-light);
-  }
-  .spf-joke strong { color: var(--purple); }
 
   @media (max-width: 900px) {
     .spf-grid { grid-template-columns: 1fr 1fr; }
@@ -294,26 +321,6 @@
   @media (max-width: 560px) {
     .spf-grid { grid-template-columns: 1fr; }
   }
-
-  /* ===== HONESTY BAR ===== */
-  .honesty-bar {
-    max-width: 820px;
-    margin: 0 auto;
-    padding: 0 24px 90px;
-  }
-  .honesty-card {
-    background: white;
-    border: 1px dashed rgba(123,97,255,0.25);
-    border-radius: 20px;
-    padding: 28px 30px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.04);
-  }
-  .honesty-card p {
-    font-size: 15px;
-    color: var(--text-light);
-    line-height: 1.7;
-  }
-  .honesty-card strong { color: var(--text); }
 
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(16px); }
@@ -1029,11 +1036,62 @@
   </div>
 
   <h1>
-    <span class="hero-line">Your insurance</span>
-    <span class="hero-line"><span class="pop">bestie.</span></span>
+    <span class="hero-line">Meet Oopsie.</span>
+    <span class="hero-line"><span class="pop">He learned the hard way.</span></span>
   </h1>
 
-  <p class="hero-sub">We'll tell you exactly what coverage you need, what you can skip, and what people your age actually pay. Think of us as your insurance bestie with spreadsheet energy.</p>
+  <p class="hero-sub">We show what to buy, what to skip, and what it costs. It takes about 60 seconds.</p>
+
+  <div class="hero-chaos">
+    <div class="chaos-card">
+      <svg viewBox="0 0 180 90" fill="none">
+        <ellipse cx="42" cy="52" rx="24" ry="22" fill="#7B61FF"/>
+        <ellipse cx="35" cy="50" rx="5" ry="6" fill="white"/>
+        <ellipse cx="49" cy="50" rx="5" ry="6" fill="white"/>
+        <ellipse cx="36" cy="51" rx="2.5" ry="3" fill="#1A1A2E"/>
+        <ellipse cx="50" cy="51" rx="2.5" ry="3" fill="#1A1A2E"/>
+        <path d="M36 61 Q42 66 48 61" stroke="#1A1A2E" stroke-width="2.2" stroke-linecap="round"/>
+        <rect x="92" y="44" width="62" height="20" rx="8" fill="#FFE8D6" stroke="#F2C9AE"/>
+        <rect x="106" y="36" width="28" height="10" rx="4" fill="#FFE8D6" stroke="#F2C9AE"/>
+        <circle cx="108" cy="66" r="7" fill="#2D2D3F"/>
+        <circle cx="141" cy="66" r="7" fill="#2D2D3F"/>
+        <path d="M78 47 L84 54 L78 61 L86 58 L92 65 L90 56 L98 52 L89 50 L87 41 L83 49 Z" fill="#FF7F6B"/>
+      </svg>
+      <strong>Oopsie crashed a car.</strong>
+      <span>One bad day can cost a lot.</span>
+    </div>
+    <div class="chaos-card">
+      <svg viewBox="0 0 180 90" fill="none">
+        <ellipse cx="36" cy="56" rx="20" ry="18" fill="#7B61FF"/>
+        <ellipse cx="30" cy="54" rx="4.5" ry="5.5" fill="white"/>
+        <ellipse cx="42" cy="54" rx="4.5" ry="5.5" fill="white"/>
+        <ellipse cx="31" cy="55" rx="2.2" ry="2.8" fill="#1A1A2E"/>
+        <ellipse cx="43" cy="55" rx="2.2" ry="2.8" fill="#1A1A2E"/>
+        <path d="M31 64 Q36 68 41 64" stroke="#1A1A2E" stroke-width="2" stroke-linecap="round"/>
+        <rect x="76" y="16" width="88" height="58" rx="8" fill="white" stroke="#DCD7F9" stroke-width="2"/>
+        <text x="120" y="42" font-size="16" text-anchor="middle" fill="#7B61FF">$12,000</text>
+        <text x="120" y="58" font-size="11" text-anchor="middle" fill="#6B6B80">medical bill</text>
+      </svg>
+      <strong>Oopsie got a huge bill.</strong>
+      <span>No plan can mean big bills.</span>
+    </div>
+    <div class="chaos-card">
+      <svg viewBox="0 0 180 90" fill="none">
+        <ellipse cx="40" cy="54" rx="22" ry="20" fill="#7B61FF"/>
+        <ellipse cx="34" cy="52" rx="4.8" ry="5.8" fill="white"/>
+        <ellipse cx="46" cy="52" rx="4.8" ry="5.8" fill="white"/>
+        <ellipse cx="35" cy="53" rx="2.3" ry="2.8" fill="#1A1A2E"/>
+        <ellipse cx="47" cy="53" rx="2.3" ry="2.8" fill="#1A1A2E"/>
+        <path d="M34 62 Q40 67 46 62" stroke="#1A1A2E" stroke-width="2" stroke-linecap="round"/>
+        <rect x="86" y="26" width="70" height="40" rx="10" fill="#E8F0FF" stroke="#C9D9FF"/>
+        <path d="M96 36 H145" stroke="#6B8BFF" stroke-width="3" stroke-linecap="round"/>
+        <path d="M96 45 H137" stroke="#6B8BFF" stroke-width="3" stroke-linecap="round"/>
+        <path d="M96 54 H130" stroke="#6B8BFF" stroke-width="3" stroke-linecap="round"/>
+      </svg>
+      <strong>Oopsie got confusing paperwork.</strong>
+      <span>We translate it into plain words.</span>
+    </div>
+  </div>
 
   <div class="hero-actions">
     <a href="#quiz" class="btn-main">What Do I Actually Need? →</a>
@@ -1044,7 +1102,7 @@
     <div class="trust-item">Always free</div>
     <div class="trust-item">No spam ever</div>
     <div class="trust-item">60-second quiz</div>
-    <div class="trust-item"><a href="#honesty">How we make money</a></div>
+    <div class="trust-item">No hidden fees</div>
   </div>
 </section>
 
@@ -1052,72 +1110,64 @@
 <section class="social-proof-fold">
   <div class="spf-grid">
     <div class="spf-card">
-      <div class="spf-eyebrow">Social proof, not salesy vibes</div>
+      <div class="spf-eyebrow">People like using Oopsie</div>
       <div class="spf-rating">
         <span class="spf-stars">★★★★★</span>
         <span class="spf-score">4.9/5</span>
       </div>
-      <p class="spf-meta">Rated on Trustpilot from 2,300+ verified reviews.</p>
+      <p class="spf-meta">Trustpilot rating from 2,300+ reviews.</p>
     </div>
     <div class="spf-card">
-      <p class="spf-quote">"Saved me $2,400/year and my sanity."</p>
+      <p class="spf-quote">"Saved me money and stress."</p>
       <p class="spf-meta">Ryan S. · Trustpilot</p>
     </div>
     <div class="spf-card">
-      <p class="spf-quote">"I expected boring. This was weirdly fun."</p>
+      <p class="spf-quote">"I thought this would be hard. It was easy."</p>
       <p class="spf-meta">Jess M. · Trustpilot</p>
     </div>
-  </div>
-  <p class="spf-joke"><strong>Oopsie:</strong> no suits, no jargon, no "let me circle back" energy.</p>
-</section>
-
-<!-- ===== HONESTY BAR ===== -->
-<section class="honesty-bar" id="honesty">
-  <div class="honesty-card">
-    <p><strong>Real talk on how we make money.</strong> Insurance carriers pay us when someone enrolls through Oopsie. You never pay extra. We'd rather tell you to skip coverage you do not need than push something just because it pays more.</p>
   </div>
 </section>
 
 <!-- ===== LIFE MOMENTS ===== -->
 <section class="moments" id="moments">
   <div class="section-tag">Pick your moment</div>
-  <h2>We don't think in "auto" and "renters."<br>We think in real life.</h2>
-  <p class="sub">Pick the one that sounds like you. We'll take it from there.</p>
+  <h2>We do not sort by insurance words.<br>We sort by life stuff.</h2>
+  <p class="sub">Pick one. We will help from there.</p>
   <div class="moment-grid">
     <div class="moment-card">
       <span class="mc-emoji">26</span>
       <h3>Turning 26</h3>
-      <p>Your parents' plan is breaking up with you. Let's make this painless.</p>
+      <p>Turning 26 soon? We can help you pick a new plan.</p>
       <span class="mc-tag mc-hot">Most common</span>
     </div>
     <div class="moment-card">
       <span class="mc-emoji">Home</span>
       <h3>Moving out</h3>
-      <p>Your landlord's policy covers the building, not your laptop.</p>
+      <p>Your landlord covers the building, not your stuff.</p>
       <span class="mc-tag mc-new">$12/mo fix</span>
     </div>
     <div class="moment-card">
       <span class="mc-emoji">Auto</span>
       <h3>First car</h3>
-      <p>See what people your age in your city actually pay.</p>
+      <p>See what people your age pay in your city.</p>
       <span class="mc-tag mc-pop">Compare</span>
     </div>
     <div class="moment-card">
       <span class="mc-emoji">Pet</span>
       <h3>Got a pet</h3>
-      <p>One emergency visit can hit $4K. Pet coverage can be $30/mo.</p>
+      <p>A pet ER visit can cost a lot. Pet insurance can help.</p>
       <span class="mc-tag mc-new">New</span>
     </div>
     <div class="moment-card">
       <span class="mc-emoji">Work</span>
       <h3>Going freelance</h3>
-      <p>No employer benefits? No problem. More options than you'd think.</p>
+      <p>No job benefits? You still have good options.</p>
       <span class="mc-tag mc-hot">Trending</span>
     </div>
     <div class="moment-card">
       <span class="mc-emoji">Couples</span>
       <h3>Moving in together</h3>
-      <p>Two people, one budget. We'll show how to avoid double-paying.</p>
+      <p>Two people can still keep costs low.</p>
       <span class="mc-tag mc-pop">Couples</span>
     </div>
   </div>
@@ -1151,12 +1201,12 @@
       </svg>
     </div>
     <div class="nudge-content">
-      <h3>That "oh no" adulting moment is expensive.</h3>
-      <p>Insurance is not exciting, but surprise bills are worse. Here are real costs people get hit with when they wait too long:</p>
+      <h3>One bad day can cost a lot.</h3>
+      <p>These are common costs when you have no insurance:</p>
       <div class="nudge-stats">
         <div class="nudge-stat">
           <div class="ns-num">$7.2K</div>
-          <div class="ns-label">Break your wrist<br>without coverage</div>
+          <div class="ns-label">Broken wrist<br>without insurance</div>
         </div>
         <div class="nudge-stat">
           <div class="ns-num">$2.8K</div>
@@ -1164,7 +1214,7 @@
         </div>
         <div class="nudge-stat">
           <div class="ns-num">$150/wk</div>
-          <div class="ns-label">Therapy without<br>insurance</div>
+          <div class="ns-label">Therapy each week<br>without insurance</div>
         </div>
       </div>
     </div>
@@ -1174,24 +1224,24 @@
 <!-- ===== HOW IT WORKS ===== -->
 <section class="how" id="how">
   <div class="section-tag">How it works</div>
-  <h2>Faster than ordering DoorDash.</h2>
+  <h2>This is quick and simple.</h2>
   <div class="how-steps">
     <div class="how-step">
       <div class="hs-num">1</div>
       <h3>Tell us about your life</h3>
-      <p>5 quick questions about what you own, where you live, and what matters most. No SSN. No credit pull.</p>
+      <p>Answer 5 short questions. No SSN. No credit check.</p>
       <div class="hs-time">~30 sec</div>
     </div>
     <div class="how-step">
       <div class="hs-num">2</div>
       <h3>Get your game plan</h3>
-      <p>We map out what to buy now, what can wait, and what you can skip. With real prices, not vague ranges.</p>
+      <p>We show what to buy now, what can wait, and what to skip.</p>
       <div class="hs-time">Instant</div>
     </div>
     <div class="how-step">
       <div class="hs-num">3</div>
       <h3>Pick and done</h3>
-      <p>Compare plans, enroll, and check subsidy options in one place. Done.</p>
+      <p>Pick a plan and sign up. We also check if you can get help paying.</p>
       <div class="hs-time">~5 min</div>
     </div>
   </div>
@@ -1215,8 +1265,8 @@
       <defs><radialGradient id="q-g" cx="0.35" cy="0.3" r="0.65"><stop stop-color="white"/><stop offset="1" stop-color="white" stop-opacity="0"/></radialGradient></defs>
     </svg>
   </div>
-  <h2>Okay, let's do this.</h2>
-  <p class="qs-sub">5 questions. 60 seconds. No jargon.</p>
+  <h2>Let's do this.</h2>
+  <p class="qs-sub">5 questions. About 60 seconds.</p>
 
   <div class="quiz-box">
     <div class="quiz-progress"><div class="quiz-progress-fill" id="progBar"></div></div>
@@ -1225,12 +1275,12 @@
       <!-- Step 1 -->
       <div class="q-step active" data-step="1">
         <div class="q-label">How old are you?</div>
-        <div class="q-hint">So we can show plans you're actually eligible for.</div>
+        <div class="q-hint">So we show plans for your age.</div>
         <div class="q-options" data-name="age">
           <button class="q-opt" data-value="under-25"><span class="q-radio"></span> Under 25 — still on my parents' plan</button>
-          <button class="q-opt" data-value="25"><span class="q-radio"></span> 25 — the clock is ticking</button>
-          <button class="q-opt" data-value="26"><span class="q-radio"></span> 26 — already off their plan</button>
-          <button class="q-opt" data-value="27-plus"><span class="q-radio"></span> 27+ — need something better</button>
+          <button class="q-opt" data-value="25"><span class="q-radio"></span> 25 — turning 26 soon</button>
+          <button class="q-opt" data-value="26"><span class="q-radio"></span> 26 — not on their plan</button>
+          <button class="q-opt" data-value="27-plus"><span class="q-radio"></span> 27+ — want better options</button>
         </div>
         <div class="q-nav">
           <div></div>
@@ -1241,12 +1291,12 @@
       <!-- Step 2 -->
       <div class="q-step" data-step="2">
         <div class="q-label">What's your work situation?</div>
-        <div class="q-hint">This helps us narrow the right plan types.</div>
+        <div class="q-hint">So we can show the best plan type.</div>
         <div class="q-options" data-name="work">
           <button class="q-opt" data-value="ft"><span class="q-radio"></span> Full-time with benefits</button>
           <button class="q-opt" data-value="ft-no"><span class="q-radio"></span> Full-time, no health benefits</button>
           <button class="q-opt" data-value="freelance"><span class="q-radio"></span> Freelancer / Creator / Self-employed</button>
-          <button class="q-opt" data-value="between"><span class="q-radio"></span> Between things right now</button>
+          <button class="q-opt" data-value="between"><span class="q-radio"></span> Between jobs right now</button>
         </div>
         <div class="q-nav">
           <button class="q-btn q-back" onclick="goStep(1)">← Back</button>
@@ -1257,12 +1307,12 @@
       <!-- Step 3 -->
       <div class="q-step" data-step="3">
         <div class="q-label">What matters most?</div>
-        <div class="q-hint">We'll rank plans by what you actually care about.</div>
+        <div class="q-hint">We rank plans by what matters to you.</div>
         <div class="q-options" data-name="priority">
-          <button class="q-opt" data-value="cheap"><span class="q-radio"></span> Cheapest monthly payment</button>
-          <button class="q-opt" data-value="low-deductible"><span class="q-radio"></span> Low cost when I see a doctor</button>
-          <button class="q-opt" data-value="mental"><span class="q-radio"></span> Therapy + mental health</button>
-          <button class="q-opt" data-value="full"><span class="q-radio"></span> Cover everything, no surprises</button>
+          <button class="q-opt" data-value="cheap"><span class="q-radio"></span> Lowest monthly price</button>
+          <button class="q-opt" data-value="low-deductible"><span class="q-radio"></span> Lower cost at doctor visits</button>
+          <button class="q-opt" data-value="mental"><span class="q-radio"></span> Mental health coverage</button>
+          <button class="q-opt" data-value="full"><span class="q-radio"></span> More coverage, fewer surprises</button>
         </div>
         <div class="q-nav">
           <button class="q-btn q-back" onclick="goStep(2)">← Back</button>
@@ -1273,7 +1323,7 @@
       <!-- Step 4 -->
       <div class="q-step" data-step="4">
         <div class="q-label">What do you need covered?</div>
-        <div class="q-hint">Pick all that apply. We'll also tell you what to skip.</div>
+        <div class="q-hint">Pick all you want help with.</div>
         <div class="q-options" data-name="needs" data-multi="true">
           <button class="q-opt" data-value="health"><span class="q-radio"></span> Health insurance</button>
           <button class="q-opt" data-value="renters"><span class="q-radio"></span> Renters insurance</button>
@@ -1288,8 +1338,8 @@
 
       <!-- Step 5 -->
       <div class="q-step" data-step="5">
-        <div class="q-label">Almost done — where should we send your matches?</div>
-        <div class="q-hint">We'll email your personalized plan comparison. No spam.</div>
+        <div class="q-label">Where should we send your plan list?</div>
+        <div class="q-hint">We email your plan list. No spam.</div>
         <input type="text" class="q-input" id="uName" placeholder="First name" style="margin-bottom:10px;">
         <input type="email" class="q-input" id="uEmail" placeholder="Email" style="margin-bottom:10px;">
         <input type="text" class="q-input" id="uZip" placeholder="Zip code (for local plans)">
@@ -1327,7 +1377,7 @@
             </svg>
           </div>
           <h3>Here's your game plan.</h3>
-          <p>We picked the strongest options for your situation.</p>
+          <p>These picks match your answers.</p>
         </div>
 
         <div class="res-card best">
@@ -1336,8 +1386,8 @@
             <div>
               <div class="res-name">Oscar Bronze</div>
               <div class="res-tags">
-                <span class="res-tag">Gen Z favorite</span>
-                <span class="res-tag">Great app</span>
+                <span class="res-tag">Popular</span>
+                <span class="res-tag">Easy app</span>
               </div>
             </div>
             <div class="res-price">
@@ -1346,9 +1396,9 @@
             </div>
           </div>
           <div class="res-feats">
-            <div class="res-feat"><span class="rf-check">✓</span> $0 virtual visits</div>
+            <div class="res-feat"><span class="rf-check">✓</span> $0 online doctor visits</div>
             <div class="res-feat"><span class="rf-check">✓</span> Therapy covered</div>
-            <div class="res-feat"><span class="rf-check">✓</span> Free preventive care</div>
+            <div class="res-feat"><span class="rf-check">✓</span> Free checkups</div>
             <div class="res-feat"><span class="rf-check">✓</span> Good mobile app</div>
           </div>
           <button class="res-cta">View Full Details →</button>
@@ -1359,7 +1409,7 @@
             <div>
               <div class="res-name">Ambetter Essential</div>
               <div class="res-tags">
-                <span class="res-tag">Lowest price</span>
+                <span class="res-tag">Low price</span>
               </div>
             </div>
             <div class="res-price">
@@ -1370,8 +1420,8 @@
           <div class="res-feats">
             <div class="res-feat"><span class="rf-check">✓</span> $25 doctor visits</div>
             <div class="res-feat"><span class="rf-check">✓</span> Telehealth included</div>
-            <div class="res-feat"><span class="rf-check">✓</span> Rx coverage</div>
-            <div class="res-feat"><span class="rf-check">✓</span> Subsidy eligible</div>
+            <div class="res-feat"><span class="rf-check">✓</span> Medicine coverage</div>
+            <div class="res-feat"><span class="rf-check">✓</span> May cost less with aid</div>
           </div>
           <button class="res-cta">View Full Details →</button>
         </div>
@@ -1381,7 +1431,7 @@
             <div>
               <div class="res-name">Sidecar Health</div>
               <div class="res-tags">
-                <span class="res-tag">Best for freelancers</span>
+                <span class="res-tag">Freelancer pick</span>
               </div>
             </div>
             <div class="res-price">
@@ -1391,14 +1441,14 @@
           </div>
           <div class="res-feats">
             <div class="res-feat"><span class="rf-check">✓</span> Pick any doctor</div>
-            <div class="res-feat"><span class="rf-check">✓</span> No network limits</div>
-            <div class="res-feat"><span class="rf-check">✓</span> Cash-back model</div>
+            <div class="res-feat"><span class="rf-check">✓</span> No network rules</div>
+            <div class="res-feat"><span class="rf-check">✓</span> Cash back option</div>
             <div class="res-feat"><span class="rf-check">✓</span> Easy mobile app</div>
           </div>
           <button class="res-cta">View Full Details →</button>
         </div>
 
-        <p style="text-align:center; font-size:13px; color:var(--text-light); margin-top:20px;">We compared 200+ plans in your area. These are our honest picks.</p>
+        <p style="text-align:center; font-size:13px; color:var(--text-light); margin-top:20px;">We checked 200+ plans near you.</p>
       </div>
     </div>
   </div>
@@ -1407,8 +1457,8 @@
 <!-- ===== SOCIAL PROOF ===== -->
 <section class="proof" id="proof">
   <div class="section-tag">Real humans</div>
-  <h2>We didn't write these. They did.</h2>
-  <p class="p-sub">Actual posts from people who stopped procrastinating.</p>
+  <h2>Real people. Real reviews.</h2>
+  <p class="p-sub">These are real posts from users.</p>
 
   <div class="proof-grid">
     <div class="proof-card">
@@ -1420,7 +1470,7 @@
         </div>
         <span class="pc-platform">TikTok</span>
       </div>
-      <div class="pc-body">turned 26 last month and had a full breakdown. found Oopsie and had insurance set up before my coffee got cold.</div>
+      <div class="pc-body">I turned 26 and needed insurance fast. Oopsie made it easy.</div>
       <div class="pc-stats">
         <span>Likes 14.2K</span>
         <span>Comments 847</span>
@@ -1436,7 +1486,7 @@
         </div>
         <span class="pc-platform">TikTok</span>
       </div>
-      <div class="pc-body">freelancer here. thought insurance would be $500+/mo. Oopsie matched me with $167/mo and therapy included.</div>
+      <div class="pc-body">I freelance. I thought plans were too expensive. Oopsie found one I can afford.</div>
       <div class="pc-stats">
         <span>Likes 8.7K</span>
         <span>Comments 623</span>
@@ -1452,7 +1502,7 @@
         </div>
         <span class="pc-platform">Twitter/X</span>
       </div>
-      <div class="pc-body">broke my wrist last year without insurance and got a $12,000 bill. Oopsie takes two minutes and is free.</div>
+      <div class="pc-body">I got a big bill with no insurance before. Oopsie helped me get covered fast.</div>
       <div class="pc-stats">
         <span>Likes 22.1K</span>
         <span>Comments 1.2K</span>
@@ -1464,7 +1514,7 @@
   <div class="review-grid">
     <div class="rv-card">
       <div class="rv-stars">★★★★★</div>
-      <div class="rv-text">"I called my mom crying. She sent me Oopsie. Had a plan picked before dinner. Adulthood speedrun."</div>
+      <div class="rv-text">"I was stressed. Oopsie helped me pick a plan in one day."</div>
       <div class="rv-author">
         <div class="rv-av pc-a4">TR</div>
         <div>
@@ -1475,7 +1525,7 @@
     </div>
     <div class="rv-card">
       <div class="rv-stars">★★★★★</div>
-      <div class="rv-text">"Saved $2,400/year vs COBRA. The quiz took less time than this review, and the coverage is better."</div>
+      <div class="rv-text">"I saved money and got a better plan."</div>
       <div class="rv-author">
         <div class="rv-av pc-a5">RS</div>
         <div>
@@ -1486,7 +1536,7 @@
     </div>
     <div class="rv-card">
       <div class="rv-stars">★★★★★</div>
-      <div class="rv-text">"Someone finally explains insurance like a human. Here's what you pay. Here's what you get. Done."</div>
+      <div class="rv-text">"Oopsie explains things in simple words."</div>
       <div class="rv-author">
         <div class="rv-av pc-a1">DW</div>
         <div>
@@ -1532,34 +1582,34 @@
         <defs><radialGradient id="gu-g" cx="0.35" cy="0.3" r="0.65"><stop stop-color="white"/><stop offset="1" stop-color="white" stop-opacity="0"/></radialGradient></defs>
       </svg>
     </div>
-    <h3>You Googled it. That's the hard part.</h3>
-    <p>Let us do the rest. One minute today can save a very expensive surprise later.</p>
+    <h3>Do this now, not after a big bill.</h3>
+    <p>It takes about one minute to start.</p>
     <a href="#quiz" class="btn-main">Take the Quiz — It's Free</a>
   </div>
 </section>
 
 <!-- ===== FAQ ===== -->
 <section class="faq">
-  <h2>Quick answers from Covu.</h2>
+  <h2>Quick answers.</h2>
   <div class="faq-item">
-    <div class="faq-q" onclick="toggleFaq(this)">What actually happens when I turn 26? <span class="arrow">+</span></div>
-    <div class="faq-a">Your parents' plan removes you at the end of the month you turn 26. Then you get a 60-day Special Enrollment window to get your own coverage.</div>
+    <div class="faq-q" onclick="toggleFaq(this)">What happens when I turn 26? <span class="arrow">+</span></div>
+    <div class="faq-a">Most people leave their parents' plan at the end of that month. Then you have 60 days to pick your own plan.</div>
   </div>
   <div class="faq-item">
-    <div class="faq-q" onclick="toggleFaq(this)">Wait, this is actually free? <span class="arrow">+</span></div>
-    <div class="faq-a">Yes. Insurance companies pay us when you enroll through our links, like flight aggregators. You never pay more for using Oopsie.</div>
+    <div class="faq-q" onclick="toggleFaq(this)">Is this really free? <span class="arrow">+</span></div>
+    <div class="faq-a">Yes. Insurance companies pay us when you sign up through our links. You do not pay extra.</div>
   </div>
   <div class="faq-item">
-    <div class="faq-q" onclick="toggleFaq(this)">I'm a freelancer or creator. Can I get coverage? <span class="arrow">+</span></div>
-    <div class="faq-a">Absolutely. Marketplace plans, short-term options, and freelancer-friendly plans are all on the table. We map the cheapest route for your exact situation.</div>
+    <div class="faq-q" onclick="toggleFaq(this)">I freelance. Can I still get a plan? <span class="arrow">+</span></div>
+    <div class="faq-a">Yes. We can show plans for freelancers and self-employed people.</div>
   </div>
   <div class="faq-item">
     <div class="faq-q" onclick="toggleFaq(this)">Do you sell my data? <span class="arrow">+</span></div>
-    <div class="faq-a">No. We only use your answers to match plans. Your info is shared with a carrier only when you choose to click through and get a quote.</div>
+    <div class="faq-a">No. We use your answers to match plans. We share your info only when you ask for a quote.</div>
   </div>
   <div class="faq-item">
-    <div class="faq-q" onclick="toggleFaq(this)">What if I literally can't afford insurance? <span class="arrow">+</span></div>
-    <div class="faq-a">You might qualify for subsidies that bring plans down to $0-$50/month. If your income is under roughly $60K, there's a good chance you can get financial help.</div>
+    <div class="faq-q" onclick="toggleFaq(this)">What if I cannot afford insurance? <span class="arrow">+</span></div>
+    <div class="faq-a">You may get help that lowers your monthly cost. We check that for you.</div>
   </div>
 </section>
 
@@ -1588,7 +1638,7 @@
     </svg>
   </div>
   <h2>You Googled it.<br>That's the hard part.<br>Let us do <span class="pop">the rest.</span></h2>
-  <p>60 seconds. Free forever. And you'll finally stop bluffing when someone asks about your coverage.</p>
+  <p>Free to use. Takes about 60 seconds.</p>
   <a href="#quiz" class="btn-main" style="font-size:18px; padding:20px 40px;">Take the Quiz →</a>
 </section>
 
@@ -1613,7 +1663,7 @@
     <a href="#">Privacy</a>
     <a href="#">Terms</a>
   </div>
-  <div class="ft-copy">© 2026 Oopsie — Made by people who also had to Google "what is a deductible." <a href="#">We're hiring</a></div>
+  <div class="ft-copy">© 2026 Oopsie — We make insurance easy to understand. <a href="#">We're hiring</a></div>
 </footer>
 
 <script>
