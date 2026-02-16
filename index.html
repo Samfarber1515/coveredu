@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CoveredU — your insurance bestie</title>
+<title>Oopsie — your insurance bestie</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,700;0,9..144,800;0,9..144,900;1,9..144,400;1,9..144,700&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -139,22 +139,6 @@
     animation: fadeUp 0.6s ease-out;
   }
 
-  .hero-pill {
-    display: inline-flex; align-items: center; gap: 8px;
-    background: white;
-    border: 1px solid var(--border);
-    padding: 8px 18px; border-radius: 100px;
-    font-size: 14px; font-weight: 500;
-    color: var(--text-light);
-    margin-bottom: 28px;
-    animation: fadeUp 0.5s ease-out 0.1s both;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-  }
-  .hero-pill .dot {
-    width: 8px; height: 8px; border-radius: 50%;
-    background: var(--green);
-  }
-
   .hero h1 {
     font-family: 'Fraunces', serif;
     font-size: clamp(40px, 7vw, 76px);
@@ -237,6 +221,79 @@
     text-underline-offset: 2px;
   }
   .trust-item .ti { font-size: 16px; }
+
+  /* ===== BELOW-FOLD SOCIAL PROOF ===== */
+  .social-proof-fold {
+    padding: 0 24px 84px;
+  }
+  .spf-grid {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 14px;
+  }
+  .spf-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 20px 22px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+  }
+  .spf-eyebrow {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1.3px;
+    color: var(--text-light);
+    margin-bottom: 8px;
+    font-weight: 700;
+  }
+  .spf-rating {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin-bottom: 8px;
+  }
+  .spf-stars {
+    color: var(--yellow);
+    letter-spacing: 2px;
+    font-size: 16px;
+    line-height: 1;
+  }
+  .spf-score {
+    font-family: 'Fraunces', serif;
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--text);
+    line-height: 1;
+  }
+  .spf-meta {
+    font-size: 13px;
+    color: var(--text-light);
+    line-height: 1.6;
+  }
+  .spf-quote {
+    font-size: 15px;
+    color: var(--text);
+    line-height: 1.55;
+    margin-bottom: 8px;
+  }
+  .spf-joke {
+    max-width: 1000px;
+    margin: 14px auto 0;
+    text-align: center;
+    font-size: 13px;
+    color: var(--text-light);
+  }
+  .spf-joke strong { color: var(--purple); }
+
+  @media (max-width: 900px) {
+    .spf-grid { grid-template-columns: 1fr 1fr; }
+    .spf-card:first-child { grid-column: 1 / -1; }
+  }
+  @media (max-width: 560px) {
+    .spf-grid { grid-template-columns: 1fr; }
+  }
 
   /* ===== HONESTY BAR ===== */
   .honesty-bar {
@@ -922,7 +979,7 @@
       <ellipse cx="90" cy="68" rx="8" ry="5" fill="#FFB3C1" opacity="0.5"/>
       <defs><radialGradient id="nav-g" cx="0.3" cy="0.3"><stop stop-color="white"/><stop offset="1" stop-color="white" stop-opacity="0"/></radialGradient></defs>
     </svg>
-    <span class="nav-wordmark">CoveredU</span>
+    <span class="nav-wordmark">Oopsie</span>
   </div>
   <div class="nav-links">
     <a href="#moments">Life Moments</a>
@@ -971,17 +1028,12 @@
     </svg>
   </div>
 
-  <div class="hero-pill">
-    <span class="dot"></span>
-    Matched 12,847 people this month
-  </div>
-
   <h1>
     <span class="hero-line">Your insurance</span>
     <span class="hero-line"><span class="pop">bestie.</span></span>
   </h1>
 
-  <p class="hero-sub">We'll tell you exactly what coverage you need, what you can skip, and what people your age actually pay. In 60 seconds. For free.</p>
+  <p class="hero-sub">We'll tell you exactly what coverage you need, what you can skip, and what people your age actually pay. Think of us as your insurance bestie with spreadsheet energy.</p>
 
   <div class="hero-actions">
     <a href="#quiz" class="btn-main">What Do I Actually Need? →</a>
@@ -996,10 +1048,33 @@
   </div>
 </section>
 
+<!-- ===== SOCIAL PROOF BELOW THE FOLD ===== -->
+<section class="social-proof-fold">
+  <div class="spf-grid">
+    <div class="spf-card">
+      <div class="spf-eyebrow">Social proof, not salesy vibes</div>
+      <div class="spf-rating">
+        <span class="spf-stars">★★★★★</span>
+        <span class="spf-score">4.9/5</span>
+      </div>
+      <p class="spf-meta">Rated on Trustpilot from 2,300+ verified reviews.</p>
+    </div>
+    <div class="spf-card">
+      <p class="spf-quote">"Saved me $2,400/year and my sanity."</p>
+      <p class="spf-meta">Ryan S. · Trustpilot</p>
+    </div>
+    <div class="spf-card">
+      <p class="spf-quote">"I expected boring. This was weirdly fun."</p>
+      <p class="spf-meta">Jess M. · Trustpilot</p>
+    </div>
+  </div>
+  <p class="spf-joke"><strong>Oopsie:</strong> no suits, no jargon, no "let me circle back" energy.</p>
+</section>
+
 <!-- ===== HONESTY BAR ===== -->
 <section class="honesty-bar" id="honesty">
   <div class="honesty-card">
-    <p><strong>Real talk on how we make money.</strong> Insurance carriers pay us when someone enrolls through CoveredU. You never pay extra. We'd rather tell you to skip coverage you do not need than push something just because it pays more.</p>
+    <p><strong>Real talk on how we make money.</strong> Insurance carriers pay us when someone enrolls through Oopsie. You never pay extra. We'd rather tell you to skip coverage you do not need than push something just because it pays more.</p>
   </div>
 </section>
 
@@ -1345,7 +1420,7 @@
         </div>
         <span class="pc-platform">TikTok</span>
       </div>
-      <div class="pc-body">turned 26 last month and had a full breakdown. found CoveredU and had insurance set up before my coffee got cold.</div>
+      <div class="pc-body">turned 26 last month and had a full breakdown. found Oopsie and had insurance set up before my coffee got cold.</div>
       <div class="pc-stats">
         <span>Likes 14.2K</span>
         <span>Comments 847</span>
@@ -1361,7 +1436,7 @@
         </div>
         <span class="pc-platform">TikTok</span>
       </div>
-      <div class="pc-body">freelancer here. thought insurance would be $500+/mo. CoveredU matched me with $167/mo and therapy included.</div>
+      <div class="pc-body">freelancer here. thought insurance would be $500+/mo. Oopsie matched me with $167/mo and therapy included.</div>
       <div class="pc-stats">
         <span>Likes 8.7K</span>
         <span>Comments 623</span>
@@ -1377,7 +1452,7 @@
         </div>
         <span class="pc-platform">Twitter/X</span>
       </div>
-      <div class="pc-body">broke my wrist last year without insurance and got a $12,000 bill. CoveredU takes two minutes and is free.</div>
+      <div class="pc-body">broke my wrist last year without insurance and got a $12,000 bill. Oopsie takes two minutes and is free.</div>
       <div class="pc-stats">
         <span>Likes 22.1K</span>
         <span>Comments 1.2K</span>
@@ -1389,7 +1464,7 @@
   <div class="review-grid">
     <div class="rv-card">
       <div class="rv-stars">★★★★★</div>
-      <div class="rv-text">"I called my mom crying. She sent me CoveredU. Had a plan picked before dinner. Adulthood speedrun."</div>
+      <div class="rv-text">"I called my mom crying. She sent me Oopsie. Had a plan picked before dinner. Adulthood speedrun."</div>
       <div class="rv-author">
         <div class="rv-av pc-a4">TR</div>
         <div>
@@ -1472,7 +1547,7 @@
   </div>
   <div class="faq-item">
     <div class="faq-q" onclick="toggleFaq(this)">Wait, this is actually free? <span class="arrow">+</span></div>
-    <div class="faq-a">Yes. Insurance companies pay us when you enroll through our links, like flight aggregators. You never pay more for using CoveredU.</div>
+    <div class="faq-a">Yes. Insurance companies pay us when you enroll through our links, like flight aggregators. You never pay more for using Oopsie.</div>
   </div>
   <div class="faq-item">
     <div class="faq-q" onclick="toggleFaq(this)">I'm a freelancer or creator. Can I get coverage? <span class="arrow">+</span></div>
@@ -1528,7 +1603,7 @@
       <ellipse cx="78" cy="59" rx="5" ry="5.5" fill="#1A1A2E"/>
       <path d="M50 74 Q60 82 70 74" stroke="#1A1A2E" stroke-width="3" stroke-linecap="round" fill="none"/>
     </svg>
-    CoveredU
+    Oopsie
   </div>
   <div class="ft-links">
     <a href="#">How It Works</a>
@@ -1538,7 +1613,7 @@
     <a href="#">Privacy</a>
     <a href="#">Terms</a>
   </div>
-  <div class="ft-copy">© 2026 CoveredU — Made by people who also had to Google "what is a deductible." <a href="#">We're hiring</a></div>
+  <div class="ft-copy">© 2026 Oopsie — Made by people who also had to Google "what is a deductible." <a href="#">We're hiring</a></div>
 </footer>
 
 <script>
