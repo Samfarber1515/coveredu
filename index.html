@@ -147,18 +147,18 @@
     flex-wrap: wrap;
     gap: 10px;
     font-size: 15px;
-    color: #2D5E45;
+    color: var(--text-light);
     margin-bottom: 18px;
     animation: fadeUp 0.6s ease-out;
   }
   .hero-proof .stars {
-    color: #2F8E52;
+    color: var(--purple);
     letter-spacing: 1px;
     font-size: 14px;
     line-height: 1;
   }
   .hero-proof strong {
-    color: #2F8E52;
+    color: var(--purple);
     font-weight: 700;
   }
 
@@ -177,7 +177,7 @@
     white-space: nowrap;
   }
   .hero h1 .pop {
-    color: #2F8E52;
+    color: var(--purple);
     position: relative;
     white-space: nowrap;
   }
@@ -201,23 +201,24 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background: #2F8E52;
+    background: var(--purple);
     color: white;
-    border: 2px solid #1F5E35;
+    border: 2px solid #5A46C8;
     border-radius: 100px;
     padding: 16px 42px;
     font-family: 'DM Sans', sans-serif;
     font-size: 18px;
     font-weight: 700;
     text-decoration: none;
-    box-shadow: 0 4px 0 #1F5E35;
+    box-shadow: 0 4px 0 #5A46C8;
     margin-bottom: 24px;
     animation: fadeUp 0.6s ease-out 0.35s both;
     transition: transform 0.15s ease, box-shadow 0.15s ease;
   }
   .hero-top-btn:hover {
+    background: #6B4FE0;
     transform: translateY(-1px);
-    box-shadow: 0 6px 0 #1F5E35;
+    box-shadow: 0 6px 0 #5A46C8;
   }
   .btn-main {
     background: var(--purple); color: white;
@@ -255,11 +256,11 @@
   }
   .trust-item {
     display: flex; align-items: center; gap: 10px;
-    font-size: 15px; color: #2D5E45; font-weight: 500;
+    font-size: 15px; color: var(--text-light); font-weight: 500;
   }
   .trust-item .trust-icon {
     font-size: 20px;
-    color: #2F8E52;
+    color: var(--purple);
     line-height: 1;
   }
   @media (max-width: 768px) {
@@ -272,71 +273,6 @@
       font-size: 17px;
     }
     .trust-item { font-size: 15px; }
-  }
-
-  /* ===== BELOW-FOLD SOCIAL PROOF ===== */
-  .social-proof-fold {
-    padding: 0 24px 84px;
-  }
-  .spf-grid {
-    max-width: 1000px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1.5fr 1fr 1fr;
-    gap: 14px;
-  }
-  .spf-card {
-    background: white;
-    border: 1px solid var(--border);
-    border-radius: 18px;
-    padding: 20px 22px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.04);
-  }
-  .spf-eyebrow {
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 1.3px;
-    color: var(--text-light);
-    margin-bottom: 8px;
-    font-weight: 700;
-  }
-  .spf-rating {
-    display: flex;
-    align-items: baseline;
-    gap: 10px;
-    margin-bottom: 8px;
-  }
-  .spf-stars {
-    color: var(--yellow);
-    letter-spacing: 2px;
-    font-size: 16px;
-    line-height: 1;
-  }
-  .spf-score {
-    font-family: 'Fraunces', serif;
-    font-size: 26px;
-    font-weight: 800;
-    color: var(--text);
-    line-height: 1;
-  }
-  .spf-meta {
-    font-size: 13px;
-    color: var(--text-light);
-    line-height: 1.6;
-  }
-  .spf-quote {
-    font-size: 15px;
-    color: var(--text);
-    line-height: 1.55;
-    margin-bottom: 8px;
-  }
-
-  @media (max-width: 900px) {
-    .spf-grid { grid-template-columns: 1fr 1fr; }
-    .spf-card:first-child { grid-column: 1 / -1; }
-  }
-  @media (max-width: 560px) {
-    .spf-grid { grid-template-columns: 1fr; }
   }
 
   @keyframes fadeUp {
@@ -1028,33 +964,11 @@
 
     <p class="hero-sub">Insurance can feel like a lot. Oopsie keeps it simple and helps you pick the right plan fast.</p>
 
-    <a href="#quiz" class="hero-top-btn">Try Oopsie →</a>
+    <a href="#quiz" class="hero-top-btn">Take the Quiz to See What You Need →</a>
 
     <div class="hero-trust">
       <div class="trust-item"><span class="trust-icon">◎</span> Plans from top insurers</div>
       <div class="trust-item"><span class="trust-icon">✓</span> 30-day support</div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== SOCIAL PROOF BELOW THE FOLD ===== -->
-<section class="social-proof-fold">
-  <div class="spf-grid">
-    <div class="spf-card">
-      <div class="spf-eyebrow">People like using Oopsie</div>
-      <div class="spf-rating">
-        <span class="spf-stars">★★★★★</span>
-        <span class="spf-score">4.9/5</span>
-      </div>
-      <p class="spf-meta">Trustpilot rating from 2,300+ reviews.</p>
-    </div>
-    <div class="spf-card">
-      <p class="spf-quote">"Saved me money and stress."</p>
-      <p class="spf-meta">Ryan S. · Trustpilot</p>
-    </div>
-    <div class="spf-card">
-      <p class="spf-quote">"I thought this would be hard. It was easy."</p>
-      <p class="spf-meta">Jess M. · Trustpilot</p>
     </div>
   </div>
 </section>
