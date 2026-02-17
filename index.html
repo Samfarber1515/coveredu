@@ -363,7 +363,7 @@
     .moment-grid { grid-template-columns: 1fr; }
   }
 
-  /* ===== THE GENTLE NUDGE (replacing fear stats) ===== */
+  /* ===== THE GENTLE NUDGE (text-screenshot problem stories) ===== */
   .nudge {
     padding: 80px 24px;
     max-width: 800px; margin: 0 auto;
@@ -388,35 +388,89 @@
     font-size: 16px; color: var(--text-light); line-height: 1.7;
     margin-bottom: 24px;
   }
-  .nudge-stats {
-    display: flex; gap: 24px; flex-wrap: wrap;
+  .nudge-texts {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin-bottom: 10px;
   }
-  .nudge-stat {
-    background: var(--cream);
+  .text-shot {
+    background: #F4F5F8;
+    border: 1px solid #E1E3EA;
     border-radius: 16px;
-    padding: 16px 20px;
+    padding: 10px;
+    text-align: left;
+  }
+  .ts-status {
+    font-size: 10px;
+    font-weight: 600;
+    color: #8A8E9E;
     text-align: center;
-    min-width: 100px;
+    margin: 2px 0 8px;
   }
-  .nudge-stat .ns-num {
-    font-family: 'Fraunces', serif;
-    font-size: 28px; font-weight: 800;
-    color: var(--purple);
+  .ts-thread {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
   }
-  .nudge-stat .ns-label {
-    font-size: 12px; color: var(--text-light);
-    margin-top: 2px;
+  .ts-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
   }
+  .ts-row.outgoing {
+    justify-content: flex-end;
+  }
+  .ts-avatar {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #D8C9FF, #BCA8FF);
+    color: #3B2A73;
+    font-size: 9px;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .ts-bubble {
+    max-width: calc(100% - 26px);
+    padding: 8px 10px;
+    border-radius: 14px;
+    font-size: 12px;
+    line-height: 1.35;
+  }
+  .ts-bubble.gray {
+    background: white;
+    border: 1px solid #E6E7ED;
+    color: #2E3243;
+    border-bottom-left-radius: 6px;
+  }
+  .ts-bubble.blue {
+    background: #2F7DF7;
+    color: white;
+    border-bottom-right-radius: 6px;
+  }
+  .ts-bubble strong {
+    font-weight: 800;
+  }
+  .ts-bubble.gray strong { color: #6E4AE6; }
+  .ts-bubble.blue strong { color: white; }
   .nudge-note {
-    margin-top: 16px;
+    margin-top: 14px;
     font-size: 13px;
     font-weight: 700;
     color: #B45309;
   }
 
+  @media (max-width: 900px) {
+    .nudge-texts { grid-template-columns: 1fr; }
+  }
   @media (max-width: 600px) {
-    .nudge-card { flex-direction: column; padding: 32px; text-align: center; }
-    .nudge-stats { justify-content: center; }
+    .nudge-card { flex-direction: column; padding: 32px; text-align: left; }
+    .nudge-texts { grid-template-columns: 1fr; }
+    .nudge-mascot { margin: 0 auto; }
   }
 
   /* ===== HOW IT WORKS ===== */
@@ -759,6 +813,112 @@
     font-size: 12px; color: var(--text-light); font-weight: 500;
   }
 
+  /* Advocate highlight strip */
+  .advocate-showcase {
+    position: relative;
+    margin: 0 auto 46px;
+    padding: 42px 24px 70px;
+    border-radius: 28px;
+    overflow: hidden;
+    background:
+      radial-gradient(120% 120% at 50% -10%, #3D2B78 0%, #251651 45%, #170E35 100%);
+  }
+  .advocate-rail {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 26px;
+  }
+  .advocate-polaroid {
+    width: 260px;
+    background: #fff;
+    border: 8px solid #fff;
+    border-radius: 8px;
+    text-align: left;
+    box-shadow: 0 18px 40px rgba(8,5,20,0.45);
+    transform-origin: center top;
+  }
+  .advocate-polaroid.ap-left { transform: rotate(-5deg) translateY(10px); }
+  .advocate-polaroid.ap-center { transform: rotate(2deg) translateY(-8px); }
+  .advocate-polaroid.ap-right { transform: rotate(6deg) translateY(8px); }
+  .advocate-polaroid img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 2px;
+    display: block;
+  }
+  .ap-body {
+    padding: 14px 8px 2px;
+  }
+  .ap-name {
+    font-family: 'Fraunces', serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #171625;
+    margin-bottom: 10px;
+  }
+  .ap-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+    color: #6B6A80;
+  }
+  .ap-pill {
+    font-size: 12px;
+    font-weight: 700;
+    color: #fff;
+    border-radius: 8px;
+    padding: 4px 10px;
+    white-space: nowrap;
+  }
+  .ap-pill.green { background: linear-gradient(135deg, #4AAF4E, #2F8E39); }
+  .ap-pill.purple { background: linear-gradient(135deg, #B06AF5, #8D4CE8); }
+  .ap-pill.teal { background: linear-gradient(135deg, #38B2AC, #2C8A84); }
+  .advocate-glow {
+    position: absolute;
+    left: 50%;
+    bottom: -214px;
+    transform: translateX(-50%);
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    border: 2px solid rgba(204,134,255,0.9);
+    box-shadow:
+      0 0 0 11px rgba(196,125,255,0.5),
+      0 0 0 24px rgba(180,119,255,0.42),
+      0 0 0 39px rgba(163,114,255,0.33),
+      0 0 0 56px rgba(148,108,255,0.24),
+      0 0 0 75px rgba(130,102,255,0.18),
+      0 0 38px rgba(197,121,255,0.58);
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  @media (max-width: 900px) {
+    .advocate-polaroid { width: 230px; }
+    .ap-name { font-size: 15px; }
+  }
+  @media (max-width: 760px) {
+    .advocate-showcase { padding: 28px 14px 34px; }
+    .advocate-rail {
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+    }
+    .advocate-polaroid {
+      width: min(280px, 100%);
+      transform: none !important;
+    }
+    .ap-name { font-size: 16px; }
+    .advocate-glow { display: none; }
+  }
+
   /* Review cards */
   .review-grid {
     display: grid;
@@ -1035,23 +1195,43 @@
       </svg>
     </div>
     <div class="nudge-content">
-      <h3>No insurance means one bad day can wreck your money.</h3>
-      <p>If you are not covered, you pay full price. Bills like these hit fast:</p>
-      <div class="nudge-stats">
-        <div class="nudge-stat">
-          <div class="ns-num">$3.2K</div>
-          <div class="ns-label">Small crash + tow<br>can max your card</div>
+      <h3>These are the texts people send when they are not covered.</h3>
+      <p>One random day goes wrong, then the bill hits. Fast.</p>
+      <div class="nudge-texts">
+        <div class="text-shot">
+          <div class="ts-status">Today · 2:14 PM</div>
+          <div class="ts-thread">
+            <div class="ts-row incoming"><span class="ts-avatar">JS</span><div class="ts-bubble gray">I crashed my car and they said I owe <strong>$3.55K</strong> today.</div></div>
+            <div class="ts-row outgoing"><div class="ts-bubble blue">Wait, you do not have auto coverage?</div></div>
+            <div class="ts-row incoming"><span class="ts-avatar">JS</span><div class="ts-bubble gray">No. They want a payment plan by Friday.</div></div>
+          </div>
         </div>
-        <div class="nudge-stat">
-          <div class="ns-num">$7.2K</div>
-          <div class="ns-label">ER after a bad fall<br>can drain savings</div>
+        <div class="text-shot">
+          <div class="ts-status">Yesterday · 9:02 PM</div>
+          <div class="ts-thread">
+            <div class="ts-row incoming"><span class="ts-avatar">ML</span><div class="ts-bubble gray">ER visit was 30 mins. Bill says <strong>$7.2K</strong>.</div></div>
+            <div class="ts-row outgoing"><div class="ts-bubble blue">That is brutal. Any insurance?</div></div>
+            <div class="ts-row incoming"><span class="ts-avatar">ML</span><div class="ts-bubble gray">No. I am paying this off all year.</div></div>
+          </div>
         </div>
-        <div class="nudge-stat">
-          <div class="ns-num">$4.5K</div>
-          <div class="ns-label">2 AM pet ER<br>can wipe your paycheck</div>
+        <div class="text-shot">
+          <div class="ts-status">1:48 AM</div>
+          <div class="ts-thread">
+            <div class="ts-row incoming"><span class="ts-avatar">AC</span><div class="ts-bubble gray">Emergency vet wants <strong>$4.5K</strong> upfront tonight.</div></div>
+            <div class="ts-row outgoing"><div class="ts-bubble blue">Can they start treatment first?</div></div>
+            <div class="ts-row incoming"><span class="ts-avatar">AC</span><div class="ts-bubble gray">They said only after a deposit.</div></div>
+          </div>
+        </div>
+        <div class="text-shot">
+          <div class="ts-status">8:37 AM</div>
+          <div class="ts-thread">
+            <div class="ts-row incoming"><span class="ts-avatar">RN</span><div class="ts-bubble gray">Pipe burst. Laptop and clothes are gone. I am out <strong>$2.1K</strong>.</div></div>
+            <div class="ts-row outgoing"><div class="ts-bubble blue">Landlord covers that, right?</div></div>
+            <div class="ts-row incoming"><span class="ts-avatar">RN</span><div class="ts-bubble gray">They said I needed my own renters policy.</div></div>
+          </div>
         </div>
       </div>
-      <p class="nudge-note">No coverage = no safety net when life goes sideways.</p>
+      <p class="nudge-note">No insurance means the full bill lands on you.</p>
     </div>
   </div>
 </section>
@@ -1311,6 +1491,44 @@
   <div class="section-tag">No self-hype</div>
   <h2>We'd never tell you how good we are.<br>Ask our advocates.</h2>
   <p class="p-sub">Real people. Real posts. Real receipts.</p>
+
+  <div class="advocate-showcase">
+    <div class="advocate-rail">
+      <article class="advocate-polaroid ap-left">
+        <img src="https://images.unsplash.com/photo-1522163182402-834f871fd851?auto=format&fit=crop&w=900&q=80" alt="Jordan Smith in a car">
+        <div class="ap-body">
+          <div class="ap-name">Jordan Smith, 22</div>
+          <div class="ap-meta">
+            <span>3 Friends Referred</span>
+            <span class="ap-pill green">+$256.20 Earned</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="advocate-polaroid ap-center">
+        <img src="https://images.unsplash.com/photo-1504257432389-52343af06ae3?auto=format&fit=crop&w=900&q=80" alt="Taylor Lee outdoors">
+        <div class="ap-body">
+          <div class="ap-name">Taylor Lee, 31</div>
+          <div class="ap-meta">
+            <span>1 Friend Referred</span>
+            <span class="ap-pill purple">+$124.82 in Stocks</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="advocate-polaroid ap-right">
+        <img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=900&q=80" alt="Ariana Cruz smiling outside">
+        <div class="ap-body">
+          <div class="ap-name">Ariana Cruz, 24</div>
+          <div class="ap-meta">
+            <span>2 Friends Referred</span>
+            <span class="ap-pill teal">+$108.00 Earned</span>
+          </div>
+        </div>
+      </article>
+    </div>
+    <div class="advocate-glow" aria-hidden="true"></div>
+  </div>
 
   <div class="proof-grid">
     <div class="proof-card">
