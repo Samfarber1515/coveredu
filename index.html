@@ -898,8 +898,8 @@
 
   /* ===== HERO: AS SEEN ON ===== */
   .hero-seen-on {
-    margin: 2px 0 22px;
-    animation: fadeUp 0.6s ease-out 0.4s both;
+    margin-top: 16px;
+    animation: fadeUp 0.6s ease-out 0.55s both;
   }
   .hero-seen-on p {
     font-size: 12px;
@@ -907,22 +907,34 @@
     letter-spacing: 2px;
     color: var(--text-light);
     font-weight: 600;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
   }
   .hero-seen-logos {
     display: flex;
     flex-wrap: wrap;
-    gap: 14px;
+    gap: 10px;
   }
-  .hero-seen-logos span {
-    font-size: 13px;
-    font-weight: 700;
-    color: var(--text-mid);
+  .hero-seen-logos .seen-logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 32px;
+    padding: 6px 12px;
     background: white;
     border: 1px solid var(--border);
-    border-radius: 100px;
-    padding: 6px 12px;
-    line-height: 1;
+    border-radius: 10px;
+  }
+  .hero-seen-logos .seen-logo img {
+    display: block;
+    height: 14px;
+    width: auto;
+    max-width: 118px;
+    object-fit: contain;
+    opacity: 0.9;
+  }
+  @media (max-width: 768px) {
+    .hero-seen-logos .seen-logo { height: 30px; padding: 6px 10px; }
+    .hero-seen-logos .seen-logo img { height: 12px; max-width: 96px; }
   }
 </style>
 </head>
@@ -973,20 +985,19 @@
 
     <a href="#quiz" class="hero-top-btn">Take the Quiz to See What You Need →</a>
 
-    <div class="hero-seen-on">
-      <p>As seen on</p>
-      <div class="hero-seen-logos">
-        <span>TikTok</span>
-        <span>Forbes</span>
-        <span>BuzzFeed</span>
-        <span>The Verge</span>
-        <span>Morning Brew</span>
-      </div>
-    </div>
-
     <div class="hero-trust">
       <div class="trust-item"><span class="trust-icon">◎</span> Plans from top insurers</div>
       <div class="trust-item"><span class="trust-icon">✓</span> 30-day support</div>
+    </div>
+
+    <div class="hero-seen-on">
+      <p>As seen on</p>
+      <div class="hero-seen-logos">
+        <span class="seen-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/d/db/Forbes_logo.svg" alt="Forbes logo"></span>
+        <span class="seen-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/BuzzFeed_Logo_10.2019.svg" alt="BuzzFeed logo"></span>
+        <span class="seen-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/0/05/The_Verge_wordmark_2022.svg" alt="The Verge logo"></span>
+        <span class="seen-logo"><img src="https://www.morningbrew.com/images/brand-logo.svg" alt="Morning Brew logo"></span>
+      </div>
     </div>
   </div>
 </section>
@@ -994,7 +1005,7 @@
 <!-- ===== LIFE MOMENTS ===== -->
 <section class="moments" id="moments">
   <div class="section-tag">Pick your moment</div>
-  <h2>We do not know what a deductible is either.<br>Just pick your situation.</h2>
+  <h2>We don't know what a deductible is either.<br>Just pick where you're at in life now:</h2>
   <p class="sub">We will show you what to do next.</p>
   <div class="moment-grid">
     <div class="moment-card">
@@ -1087,7 +1098,7 @@
 <!-- ===== HOW IT WORKS ===== -->
 <section class="how" id="how">
   <div class="section-tag">How it works</div>
-  <h2>Faster than ordering DoorDash.<br>For real.</h2>
+  <h2>Faster than ordering DoorDash.</h2>
   <div class="how-steps">
     <div class="how-step">
       <div class="hs-num">1</div>
@@ -1128,7 +1139,7 @@
       <defs><radialGradient id="q-g" cx="0.35" cy="0.3" r="0.65"><stop stop-color="white"/><stop offset="1" stop-color="white" stop-opacity="0"/></radialGradient></defs>
     </svg>
   </div>
-  <h2>Let's do this.</h2>
+  <h2>Just answer Oopsie & she'll take care of you</h2>
   <p class="qs-sub">5 questions. About 60 seconds.</p>
 
   <div class="quiz-box">
@@ -1408,34 +1419,6 @@
         </div>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- ===== GENTLE URGENCY ===== -->
-<section class="gentle-urgency">
-  <div class="gu-card">
-    <div class="covu covu-float" style="margin-bottom:20px;">
-      <svg width="80" height="80" viewBox="0 0 200 200" fill="none">
-        <ellipse cx="100" cy="110" rx="72" ry="66" fill="#7B61FF"/>
-        <ellipse cx="100" cy="110" rx="72" ry="66" fill="url(#gu-g)" opacity="0.3"/>
-        <ellipse cx="74" cy="98" rx="16" ry="18" fill="white"/>
-        <ellipse cx="126" cy="98" rx="16" ry="18" fill="white"/>
-        <ellipse cx="78" cy="100" rx="8.5" ry="9.5" fill="#1A1A2E"/>
-        <ellipse cx="130" cy="100" rx="8.5" ry="9.5" fill="#1A1A2E"/>
-        <ellipse cx="82" cy="96" rx="3" ry="3" fill="white"/>
-        <ellipse cx="134" cy="96" rx="3" ry="3" fill="white"/>
-        <path d="M82 122 Q100 140 118 122" stroke="#1A1A2E" stroke-width="4" stroke-linecap="round" fill="none"/>
-        <ellipse cx="56" cy="114" rx="12" ry="7" fill="#FFB3C1" opacity="0.5"/>
-        <ellipse cx="144" cy="114" rx="12" ry="7" fill="#FFB3C1" opacity="0.5"/>
-        <!-- Pointing finger -->
-        <path d="M170 110 Q190 108 196 100" stroke="#7B61FF" stroke-width="10" stroke-linecap="round" fill="none"/>
-        <circle cx="198" cy="96" r="5" fill="#7B61FF"/>
-        <defs><radialGradient id="gu-g" cx="0.35" cy="0.3" r="0.65"><stop stop-color="white"/><stop offset="1" stop-color="white" stop-opacity="0"/></radialGradient></defs>
-      </svg>
-    </div>
-    <h3>Do this now, not after a big bill.</h3>
-    <p>It takes about one minute to start.</p>
-    <a href="#quiz" class="btn-main">Take the Quiz — It's Free</a>
   </div>
 </section>
 
