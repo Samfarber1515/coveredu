@@ -502,7 +502,7 @@
     height: 100%; background: var(--purple);
     border-radius: 0 4px 4px 0;
     transition: width 0.4s ease;
-    width: 20%;
+    width: 16.6667%;
   }
   .quiz-inner {
     padding: 44px 40px;
@@ -1094,7 +1094,7 @@
     </svg>
   </div>
   <h2>Just answer Oopsie & she'll take care of you</h2>
-  <p class="qs-sub">5 questions. About 60 seconds.</p>
+  <p class="qs-sub">6 questions. About 60 seconds.</p>
 
   <div class="quiz-box">
     <div class="quiz-progress"><div class="quiz-progress-fill" id="progBar"></div></div>
@@ -1102,13 +1102,14 @@
 
       <!-- Step 1 -->
       <div class="q-step active" data-step="1">
-        <div class="q-label">How old are you?</div>
-        <div class="q-hint">So we show plans for your age.</div>
-        <div class="q-options" data-name="age">
-          <button class="q-opt" data-value="under-25"><span class="q-radio"></span> Under 25 — still on my parents' plan</button>
-          <button class="q-opt" data-value="25"><span class="q-radio"></span> 25 — turning 26 soon</button>
-          <button class="q-opt" data-value="26"><span class="q-radio"></span> 26 — not on their plan</button>
-          <button class="q-opt" data-value="27-plus"><span class="q-radio"></span> 27+ — want better options</button>
+        <div class="q-label">Where are you at right now?</div>
+        <div class="q-hint">Pick the one that sounds like you.</div>
+        <div class="q-options" data-name="moment">
+          <button class="q-opt" data-value="turning-26"><span class="q-radio"></span> Turning 26</button>
+          <button class="q-opt" data-value="moving-out"><span class="q-radio"></span> Moving out</button>
+          <button class="q-opt" data-value="first-car"><span class="q-radio"></span> First car</button>
+          <button class="q-opt" data-value="got-pet"><span class="q-radio"></span> Got a pet</button>
+          <button class="q-opt" data-value="going-freelance"><span class="q-radio"></span> Going freelance</button>
         </div>
         <div class="q-nav">
           <div></div>
@@ -1118,13 +1119,13 @@
 
       <!-- Step 2 -->
       <div class="q-step" data-step="2">
-        <div class="q-label">What's your work situation?</div>
-        <div class="q-hint">So we can show the best plan type.</div>
-        <div class="q-options" data-name="work">
-          <button class="q-opt" data-value="ft"><span class="q-radio"></span> Full-time with benefits</button>
-          <button class="q-opt" data-value="ft-no"><span class="q-radio"></span> Full-time, no health benefits</button>
-          <button class="q-opt" data-value="freelance"><span class="q-radio"></span> Freelancer / Creator / Self-employed</button>
-          <button class="q-opt" data-value="between"><span class="q-radio"></span> Between jobs right now</button>
+        <div class="q-label">How old are you?</div>
+        <div class="q-hint">So we show plans for your age.</div>
+        <div class="q-options" data-name="age">
+          <button class="q-opt" data-value="under-25"><span class="q-radio"></span> Under 25 — still on my parents' plan</button>
+          <button class="q-opt" data-value="25"><span class="q-radio"></span> 25 — turning 26 soon</button>
+          <button class="q-opt" data-value="26"><span class="q-radio"></span> 26 — not on their plan</button>
+          <button class="q-opt" data-value="27-plus"><span class="q-radio"></span> 27+ — want better options</button>
         </div>
         <div class="q-nav">
           <button class="q-btn q-back" onclick="goStep(1)">← Back</button>
@@ -1134,13 +1135,13 @@
 
       <!-- Step 3 -->
       <div class="q-step" data-step="3">
-        <div class="q-label">What matters most?</div>
-        <div class="q-hint">We rank plans by what matters to you.</div>
-        <div class="q-options" data-name="priority">
-          <button class="q-opt" data-value="cheap"><span class="q-radio"></span> Lowest monthly price</button>
-          <button class="q-opt" data-value="low-deductible"><span class="q-radio"></span> Lower cost at doctor visits</button>
-          <button class="q-opt" data-value="mental"><span class="q-radio"></span> Mental health coverage</button>
-          <button class="q-opt" data-value="full"><span class="q-radio"></span> More coverage, fewer surprises</button>
+        <div class="q-label">What's your work situation?</div>
+        <div class="q-hint">So we can show the best plan type.</div>
+        <div class="q-options" data-name="work">
+          <button class="q-opt" data-value="ft"><span class="q-radio"></span> Full-time with benefits</button>
+          <button class="q-opt" data-value="ft-no"><span class="q-radio"></span> Full-time, no health benefits</button>
+          <button class="q-opt" data-value="freelance"><span class="q-radio"></span> Freelancer / Creator / Self-employed</button>
+          <button class="q-opt" data-value="between"><span class="q-radio"></span> Between jobs right now</button>
         </div>
         <div class="q-nav">
           <button class="q-btn q-back" onclick="goStep(2)">← Back</button>
@@ -1150,13 +1151,13 @@
 
       <!-- Step 4 -->
       <div class="q-step" data-step="4">
-        <div class="q-label">What do you need covered?</div>
-        <div class="q-hint">Pick all you want help with.</div>
-        <div class="q-options" data-name="needs" data-multi="true">
-          <button class="q-opt" data-value="health"><span class="q-radio"></span> Health insurance</button>
-          <button class="q-opt" data-value="renters"><span class="q-radio"></span> Renters insurance</button>
-          <button class="q-opt" data-value="auto"><span class="q-radio"></span> Auto insurance</button>
-          <button class="q-opt" data-value="pet"><span class="q-radio"></span> Pet insurance</button>
+        <div class="q-label">What matters most?</div>
+        <div class="q-hint">We rank plans by what matters to you.</div>
+        <div class="q-options" data-name="priority">
+          <button class="q-opt" data-value="cheap"><span class="q-radio"></span> Lowest monthly price</button>
+          <button class="q-opt" data-value="low-deductible"><span class="q-radio"></span> Lower cost at doctor visits</button>
+          <button class="q-opt" data-value="mental"><span class="q-radio"></span> Mental health coverage</button>
+          <button class="q-opt" data-value="full"><span class="q-radio"></span> More coverage, fewer surprises</button>
         </div>
         <div class="q-nav">
           <button class="q-btn q-back" onclick="goStep(3)">← Back</button>
@@ -1166,13 +1167,29 @@
 
       <!-- Step 5 -->
       <div class="q-step" data-step="5">
+        <div class="q-label">What do you need covered?</div>
+        <div class="q-hint">Pick all you want help with.</div>
+        <div class="q-options" data-name="needs" data-multi="true">
+          <button class="q-opt" data-value="health"><span class="q-radio"></span> Health insurance</button>
+          <button class="q-opt" data-value="renters"><span class="q-radio"></span> Renters insurance</button>
+          <button class="q-opt" data-value="auto"><span class="q-radio"></span> Auto insurance</button>
+          <button class="q-opt" data-value="pet"><span class="q-radio"></span> Pet insurance</button>
+        </div>
+        <div class="q-nav">
+          <button class="q-btn q-back" onclick="goStep(4)">← Back</button>
+          <button class="q-btn q-next" id="n5" disabled onclick="goStep(6)">Next →</button>
+        </div>
+      </div>
+
+      <!-- Step 6 -->
+      <div class="q-step" data-step="6">
         <div class="q-label">Where should we send your plan list?</div>
         <div class="q-hint">We email your plan list. No spam.</div>
         <input type="text" class="q-input" id="uName" placeholder="First name" style="margin-bottom:10px;">
         <input type="email" class="q-input" id="uEmail" placeholder="Email" style="margin-bottom:10px;">
         <input type="text" class="q-input" id="uZip" placeholder="Zip code (for local plans)">
         <div class="q-nav">
-          <button class="q-btn q-back" onclick="goStep(4)">← Back</button>
+          <button class="q-btn q-back" onclick="goStep(5)">← Back</button>
           <button class="q-btn q-next" onclick="showResults()">See My Matches</button>
         </div>
       </div>
@@ -1456,6 +1473,7 @@
 
 <script>
   const ans = {};
+  const totalQuizSteps = document.querySelectorAll('.q-step').length;
 
   // Single-select options
   document.querySelectorAll('.q-options:not([data-multi])').forEach(group => {
@@ -1486,7 +1504,7 @@
   function goStep(n) {
     document.querySelectorAll('.q-step').forEach(s => s.classList.remove('active'));
     document.querySelector(`[data-step="${n}"]`).classList.add('active');
-    document.getElementById('progBar').style.width = (n * 20) + '%';
+    document.getElementById('progBar').style.width = ((n / totalQuizSteps) * 100) + '%';
   }
 
   function showResults() {
