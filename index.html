@@ -390,43 +390,73 @@
   }
   .nudge-texts {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 12px;
     margin-bottom: 10px;
   }
   .text-shot {
-    background: #F6F2FF;
-    border: 1px solid #E8DEFF;
-    border-radius: 14px;
+    background: #F4F5F8;
+    border: 1px solid #E1E3EA;
+    border-radius: 16px;
     padding: 10px;
     text-align: left;
   }
-  .ts-head {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 8px;
-    font-size: 11px;
-    color: #7A6F9B;
+  .ts-status {
+    font-size: 10px;
+    font-weight: 600;
+    color: #8A8E9E;
+    text-align: center;
+    margin: 2px 0 8px;
   }
-  .ts-head strong {
-    color: #2D2940;
+  .ts-thread {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .ts-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .ts-row.outgoing {
+    justify-content: flex-end;
+  }
+  .ts-avatar {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #D8C9FF, #BCA8FF);
+    color: #3B2A73;
+    font-size: 9px;
     font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
   }
   .ts-bubble {
+    max-width: calc(100% - 26px);
+    padding: 8px 10px;
+    border-radius: 14px;
+    font-size: 12px;
+    line-height: 1.35;
+  }
+  .ts-bubble.gray {
     background: white;
-    border: 1px solid #ECE7FF;
-    border-radius: 12px 12px 12px 4px;
-    padding: 10px;
-    font-size: 13px;
-    line-height: 1.4;
-    color: #312C46;
+    border: 1px solid #E6E7ED;
+    color: #2E3243;
+    border-bottom-left-radius: 6px;
+  }
+  .ts-bubble.blue {
+    background: #2F7DF7;
+    color: white;
+    border-bottom-right-radius: 6px;
   }
   .ts-bubble strong {
-    color: #6E4AE6;
     font-weight: 800;
   }
+  .ts-bubble.gray strong { color: #6E4AE6; }
+  .ts-bubble.blue strong { color: white; }
   .nudge-note {
     margin-top: 14px;
     font-size: 13px;
@@ -435,11 +465,12 @@
   }
 
   @media (max-width: 900px) {
-    .nudge-texts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .nudge-texts { grid-template-columns: 1fr; }
   }
   @media (max-width: 600px) {
-    .nudge-card { flex-direction: column; padding: 32px; text-align: center; }
+    .nudge-card { flex-direction: column; padding: 32px; text-align: left; }
     .nudge-texts { grid-template-columns: 1fr; }
+    .nudge-mascot { margin: 0 auto; }
   }
 
   /* ===== HOW IT WORKS ===== */
@@ -1168,20 +1199,36 @@
       <p>One random day goes wrong, then the bill hits. Fast.</p>
       <div class="nudge-texts">
         <div class="text-shot">
-          <div class="ts-head"><strong>Car issue</strong><span>2:14 PM</span></div>
-          <div class="ts-bubble">I crashed my car and they said I owe <strong>$3.55K</strong>. I do not have coverage.</div>
+          <div class="ts-status">Today · 2:14 PM</div>
+          <div class="ts-thread">
+            <div class="ts-row incoming"><span class="ts-avatar">JS</span><div class="ts-bubble gray">I crashed my car and they said I owe <strong>$3.55K</strong> today.</div></div>
+            <div class="ts-row outgoing"><div class="ts-bubble blue">Wait, you do not have auto coverage?</div></div>
+            <div class="ts-row incoming"><span class="ts-avatar">JS</span><div class="ts-bubble gray">No. They want a payment plan by Friday.</div></div>
+          </div>
         </div>
         <div class="text-shot">
-          <div class="ts-head"><strong>ER update</strong><span>9:02 PM</span></div>
-          <div class="ts-bubble">ER just billed me <strong>$7.2K</strong> for a fall. I thought it would be way less.</div>
+          <div class="ts-status">Yesterday · 9:02 PM</div>
+          <div class="ts-thread">
+            <div class="ts-row incoming"><span class="ts-avatar">ML</span><div class="ts-bubble gray">ER visit was 30 mins. Bill says <strong>$7.2K</strong>.</div></div>
+            <div class="ts-row outgoing"><div class="ts-bubble blue">That is brutal. Any insurance?</div></div>
+            <div class="ts-row incoming"><span class="ts-avatar">ML</span><div class="ts-bubble gray">No. I am paying this off all year.</div></div>
+          </div>
         </div>
         <div class="text-shot">
-          <div class="ts-head"><strong>Vet text</strong><span>1:48 AM</span></div>
-          <div class="ts-bubble">They need <strong>$4.5K</strong> tonight for pet surgery. I cannot pay that upfront.</div>
+          <div class="ts-status">1:48 AM</div>
+          <div class="ts-thread">
+            <div class="ts-row incoming"><span class="ts-avatar">AC</span><div class="ts-bubble gray">Emergency vet wants <strong>$4.5K</strong> upfront tonight.</div></div>
+            <div class="ts-row outgoing"><div class="ts-bubble blue">Can they start treatment first?</div></div>
+            <div class="ts-row incoming"><span class="ts-avatar">AC</span><div class="ts-bubble gray">They said only after a deposit.</div></div>
+          </div>
         </div>
         <div class="text-shot">
-          <div class="ts-head"><strong>Apartment text</strong><span>8:37 AM</span></div>
-          <div class="ts-bubble">Pipe burst and ruined my stuff. They said I am out <strong>$2.1K</strong> with no renters policy.</div>
+          <div class="ts-status">8:37 AM</div>
+          <div class="ts-thread">
+            <div class="ts-row incoming"><span class="ts-avatar">RN</span><div class="ts-bubble gray">Pipe burst. Laptop and clothes are gone. I am out <strong>$2.1K</strong>.</div></div>
+            <div class="ts-row outgoing"><div class="ts-bubble blue">Landlord covers that, right?</div></div>
+            <div class="ts-row incoming"><span class="ts-avatar">RN</span><div class="ts-bubble gray">They said I needed my own renters policy.</div></div>
+          </div>
         </div>
       </div>
       <p class="nudge-note">No insurance means the full bill lands on you.</p>
