@@ -363,7 +363,7 @@
     .moment-grid { grid-template-columns: 1fr; }
   }
 
-  /* ===== THE GENTLE NUDGE (replacing fear stats) ===== */
+  /* ===== THE GENTLE NUDGE (text-screenshot problem stories) ===== */
   .nudge {
     padding: 80px 24px;
     max-width: 800px; margin: 0 auto;
@@ -388,35 +388,58 @@
     font-size: 16px; color: var(--text-light); line-height: 1.7;
     margin-bottom: 24px;
   }
-  .nudge-stats {
-    display: flex; gap: 24px; flex-wrap: wrap;
+  .nudge-texts {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    margin-bottom: 10px;
   }
-  .nudge-stat {
-    background: var(--cream);
-    border-radius: 16px;
-    padding: 16px 20px;
-    text-align: center;
-    min-width: 100px;
+  .text-shot {
+    background: #F6F2FF;
+    border: 1px solid #E8DEFF;
+    border-radius: 14px;
+    padding: 10px;
+    text-align: left;
   }
-  .nudge-stat .ns-num {
-    font-family: 'Fraunces', serif;
-    font-size: 28px; font-weight: 800;
-    color: var(--purple);
+  .ts-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+    font-size: 11px;
+    color: #7A6F9B;
   }
-  .nudge-stat .ns-label {
-    font-size: 12px; color: var(--text-light);
-    margin-top: 2px;
+  .ts-head strong {
+    color: #2D2940;
+    font-weight: 700;
+  }
+  .ts-bubble {
+    background: white;
+    border: 1px solid #ECE7FF;
+    border-radius: 12px 12px 12px 4px;
+    padding: 10px;
+    font-size: 13px;
+    line-height: 1.4;
+    color: #312C46;
+  }
+  .ts-bubble strong {
+    color: #6E4AE6;
+    font-weight: 800;
   }
   .nudge-note {
-    margin-top: 16px;
+    margin-top: 14px;
     font-size: 13px;
     font-weight: 700;
     color: #B45309;
   }
 
+  @media (max-width: 900px) {
+    .nudge-texts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
   @media (max-width: 600px) {
     .nudge-card { flex-direction: column; padding: 32px; text-align: center; }
-    .nudge-stats { justify-content: center; }
+    .nudge-texts { grid-template-columns: 1fr; }
   }
 
   /* ===== HOW IT WORKS ===== */
@@ -1141,23 +1164,27 @@
       </svg>
     </div>
     <div class="nudge-content">
-      <h3>No insurance means one bad day can wreck your money.</h3>
-      <p>If you are not covered, you pay full price. Bills like these hit fast:</p>
-      <div class="nudge-stats">
-        <div class="nudge-stat">
-          <div class="ns-num">$3.2K</div>
-          <div class="ns-label">Small crash + tow<br>can max your card</div>
+      <h3>These are the texts people send when they are not covered.</h3>
+      <p>One random day goes wrong, then the bill hits. Fast.</p>
+      <div class="nudge-texts">
+        <div class="text-shot">
+          <div class="ts-head"><strong>Car issue</strong><span>2:14 PM</span></div>
+          <div class="ts-bubble">I crashed my car and they said I owe <strong>$3.55K</strong>. I do not have coverage.</div>
         </div>
-        <div class="nudge-stat">
-          <div class="ns-num">$7.2K</div>
-          <div class="ns-label">ER after a bad fall<br>can drain savings</div>
+        <div class="text-shot">
+          <div class="ts-head"><strong>ER update</strong><span>9:02 PM</span></div>
+          <div class="ts-bubble">ER just billed me <strong>$7.2K</strong> for a fall. I thought it would be way less.</div>
         </div>
-        <div class="nudge-stat">
-          <div class="ns-num">$4.5K</div>
-          <div class="ns-label">2 AM pet ER<br>can wipe your paycheck</div>
+        <div class="text-shot">
+          <div class="ts-head"><strong>Vet text</strong><span>1:48 AM</span></div>
+          <div class="ts-bubble">They need <strong>$4.5K</strong> tonight for pet surgery. I cannot pay that upfront.</div>
+        </div>
+        <div class="text-shot">
+          <div class="ts-head"><strong>Apartment text</strong><span>8:37 AM</span></div>
+          <div class="ts-bubble">Pipe burst and ruined my stuff. They said I am out <strong>$2.1K</strong> with no renters policy.</div>
         </div>
       </div>
-      <p class="nudge-note">No coverage = no safety net when life goes sideways.</p>
+      <p class="nudge-note">No insurance means the full bill lands on you.</p>
     </div>
   </div>
 </section>
