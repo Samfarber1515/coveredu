@@ -147,18 +147,18 @@
     flex-wrap: wrap;
     gap: 10px;
     font-size: 15px;
-    color: #2D5E45;
+    color: var(--text-light);
     margin-bottom: 18px;
     animation: fadeUp 0.6s ease-out;
   }
   .hero-proof .stars {
-    color: #2F8E52;
+    color: var(--purple);
     letter-spacing: 1px;
     font-size: 14px;
     line-height: 1;
   }
   .hero-proof strong {
-    color: #2F8E52;
+    color: var(--purple);
     font-weight: 700;
   }
 
@@ -177,7 +177,7 @@
     white-space: nowrap;
   }
   .hero h1 .pop {
-    color: #2F8E52;
+    color: var(--purple);
     position: relative;
     white-space: nowrap;
   }
@@ -201,23 +201,24 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background: #2F8E52;
+    background: var(--purple);
     color: white;
-    border: 2px solid #1F5E35;
+    border: 2px solid #5A46C8;
     border-radius: 100px;
     padding: 16px 42px;
     font-family: 'DM Sans', sans-serif;
     font-size: 18px;
     font-weight: 700;
     text-decoration: none;
-    box-shadow: 0 4px 0 #1F5E35;
+    box-shadow: 0 4px 0 #5A46C8;
     margin-bottom: 24px;
     animation: fadeUp 0.6s ease-out 0.35s both;
     transition: transform 0.15s ease, box-shadow 0.15s ease;
   }
   .hero-top-btn:hover {
+    background: #6B4FE0;
     transform: translateY(-1px);
-    box-shadow: 0 6px 0 #1F5E35;
+    box-shadow: 0 6px 0 #5A46C8;
   }
   .btn-main {
     background: var(--purple); color: white;
@@ -255,11 +256,11 @@
   }
   .trust-item {
     display: flex; align-items: center; gap: 10px;
-    font-size: 15px; color: #2D5E45; font-weight: 500;
+    font-size: 15px; color: var(--text-light); font-weight: 500;
   }
   .trust-item .trust-icon {
     font-size: 20px;
-    color: #2F8E52;
+    color: var(--purple);
     line-height: 1;
   }
   @media (max-width: 768px) {
@@ -272,71 +273,6 @@
       font-size: 17px;
     }
     .trust-item { font-size: 15px; }
-  }
-
-  /* ===== BELOW-FOLD SOCIAL PROOF ===== */
-  .social-proof-fold {
-    padding: 0 24px 84px;
-  }
-  .spf-grid {
-    max-width: 1000px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1.5fr 1fr 1fr;
-    gap: 14px;
-  }
-  .spf-card {
-    background: white;
-    border: 1px solid var(--border);
-    border-radius: 18px;
-    padding: 20px 22px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.04);
-  }
-  .spf-eyebrow {
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 1.3px;
-    color: var(--text-light);
-    margin-bottom: 8px;
-    font-weight: 700;
-  }
-  .spf-rating {
-    display: flex;
-    align-items: baseline;
-    gap: 10px;
-    margin-bottom: 8px;
-  }
-  .spf-stars {
-    color: var(--yellow);
-    letter-spacing: 2px;
-    font-size: 16px;
-    line-height: 1;
-  }
-  .spf-score {
-    font-family: 'Fraunces', serif;
-    font-size: 26px;
-    font-weight: 800;
-    color: var(--text);
-    line-height: 1;
-  }
-  .spf-meta {
-    font-size: 13px;
-    color: var(--text-light);
-    line-height: 1.6;
-  }
-  .spf-quote {
-    font-size: 15px;
-    color: var(--text);
-    line-height: 1.55;
-    margin-bottom: 8px;
-  }
-
-  @media (max-width: 900px) {
-    .spf-grid { grid-template-columns: 1fr 1fr; }
-    .spf-card:first-child { grid-column: 1 / -1; }
-  }
-  @media (max-width: 560px) {
-    .spf-grid { grid-template-columns: 1fr; }
   }
 
   @keyframes fadeUp {
@@ -960,26 +896,33 @@
   }
   .ft-copy a { color: var(--purple); text-decoration: none; }
 
-  /* ===== SEEN ON ===== */
-  .seen-on {
-    padding: 64px 24px;
-    text-align: center;
-    border-top: 1px solid var(--border);
+  /* ===== HERO: AS SEEN ON ===== */
+  .hero-seen-on {
+    margin: 2px 0 22px;
+    animation: fadeUp 0.6s ease-out 0.4s both;
   }
-  .seen-on p {
-    font-size: 12px; text-transform: uppercase;
-    letter-spacing: 2px; color: var(--text-light);
-    font-weight: 600; margin-bottom: 24px;
+  .hero-seen-on p {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--text-light);
+    font-weight: 600;
+    margin-bottom: 12px;
   }
-  .seen-logos {
-    display: flex; justify-content: center;
-    align-items: center; gap: 40px; flex-wrap: wrap;
-    opacity: 0.3;
+  .hero-seen-logos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
   }
-  .seen-logos span {
-    font-family: 'Fraunces', serif;
-    font-size: 18px; font-weight: 800;
-    color: var(--text);
+  .hero-seen-logos span {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text-mid);
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    padding: 6px 12px;
+    line-height: 1;
   }
 </style>
 </head>
@@ -1028,7 +971,18 @@
 
     <p class="hero-sub">Insurance can feel like a lot. Oopsie keeps it simple and helps you pick the right plan fast.</p>
 
-    <a href="#quiz" class="hero-top-btn">Try Oopsie →</a>
+    <a href="#quiz" class="hero-top-btn">Take the Quiz to See What You Need →</a>
+
+    <div class="hero-seen-on">
+      <p>As seen on</p>
+      <div class="hero-seen-logos">
+        <span>TikTok</span>
+        <span>Forbes</span>
+        <span>BuzzFeed</span>
+        <span>The Verge</span>
+        <span>Morning Brew</span>
+      </div>
+    </div>
 
     <div class="hero-trust">
       <div class="trust-item"><span class="trust-icon">◎</span> Plans from top insurers</div>
@@ -1037,33 +991,11 @@
   </div>
 </section>
 
-<!-- ===== SOCIAL PROOF BELOW THE FOLD ===== -->
-<section class="social-proof-fold">
-  <div class="spf-grid">
-    <div class="spf-card">
-      <div class="spf-eyebrow">People like using Oopsie</div>
-      <div class="spf-rating">
-        <span class="spf-stars">★★★★★</span>
-        <span class="spf-score">4.9/5</span>
-      </div>
-      <p class="spf-meta">Trustpilot rating from 2,300+ reviews.</p>
-    </div>
-    <div class="spf-card">
-      <p class="spf-quote">"Saved me money and stress."</p>
-      <p class="spf-meta">Ryan S. · Trustpilot</p>
-    </div>
-    <div class="spf-card">
-      <p class="spf-quote">"I thought this would be hard. It was easy."</p>
-      <p class="spf-meta">Jess M. · Trustpilot</p>
-    </div>
-  </div>
-</section>
-
 <!-- ===== LIFE MOMENTS ===== -->
 <section class="moments" id="moments">
   <div class="section-tag">Pick your moment</div>
-  <h2>We do not sort by insurance words.<br>We sort by life stuff.</h2>
-  <p class="sub">Pick one. We will help from there.</p>
+  <h2>We do not know what a deductible is either.<br>Just pick your situation.</h2>
+  <p class="sub">We will show you what to do next.</p>
   <div class="moment-grid">
     <div class="moment-card">
       <span class="mc-emoji">26</span>
@@ -1155,7 +1087,7 @@
 <!-- ===== HOW IT WORKS ===== -->
 <section class="how" id="how">
   <div class="section-tag">How it works</div>
-  <h2>This is quick and simple.</h2>
+  <h2>Faster than ordering DoorDash.<br>For real.</h2>
   <div class="how-steps">
     <div class="how-step">
       <div class="hs-num">1</div>
@@ -1387,9 +1319,9 @@
 
 <!-- ===== SOCIAL PROOF ===== -->
 <section class="proof" id="proof">
-  <div class="section-tag">Real humans</div>
-  <h2>Real people. Real reviews.</h2>
-  <p class="p-sub">These are real posts from users.</p>
+  <div class="section-tag">No self-hype</div>
+  <h2>We'd never tell you how good we are.<br>Ask our advocates.</h2>
+  <p class="p-sub">Real people. Real posts. Real receipts.</p>
 
   <div class="proof-grid">
     <div class="proof-card">
@@ -1401,7 +1333,7 @@
         </div>
         <span class="pc-platform">TikTok</span>
       </div>
-      <div class="pc-body">I turned 26 and needed insurance fast. Oopsie made it easy.</div>
+      <div class="pc-body">I turned 26 and panicked. Oopsie got me covered before my coffee got cold.</div>
       <div class="pc-stats">
         <span>Likes 14.2K</span>
         <span>Comments 847</span>
@@ -1417,7 +1349,7 @@
         </div>
         <span class="pc-platform">TikTok</span>
       </div>
-      <div class="pc-body">I freelance. I thought plans were too expensive. Oopsie found one I can afford.</div>
+      <div class="pc-body">I freelance, so I thought insurance was out of budget. Oopsie proved me wrong.</div>
       <div class="pc-stats">
         <span>Likes 8.7K</span>
         <span>Comments 623</span>
@@ -1433,7 +1365,7 @@
         </div>
         <span class="pc-platform">Twitter/X</span>
       </div>
-      <div class="pc-body">I got a big bill with no insurance before. Oopsie helped me get covered fast.</div>
+      <div class="pc-body">One big medical bill taught me my lesson. Oopsie helped me fix this fast.</div>
       <div class="pc-stats">
         <span>Likes 22.1K</span>
         <span>Comments 1.2K</span>
@@ -1445,7 +1377,7 @@
   <div class="review-grid">
     <div class="rv-card">
       <div class="rv-stars">★★★★★</div>
-      <div class="rv-text">"I was stressed. Oopsie helped me pick a plan in one day."</div>
+      <div class="rv-text">"I thought this would take all weekend. Oopsie handled it in one coffee."</div>
       <div class="rv-author">
         <div class="rv-av pc-a4">TR</div>
         <div>
@@ -1456,7 +1388,7 @@
     </div>
     <div class="rv-card">
       <div class="rv-stars">★★★★★</div>
-      <div class="rv-text">"I saved money and got a better plan."</div>
+      <div class="rv-text">"I expected a hard sell. I got a cheaper plan and less stress."</div>
       <div class="rv-author">
         <div class="rv-av pc-a5">RS</div>
         <div>
@@ -1467,7 +1399,7 @@
     </div>
     <div class="rv-card">
       <div class="rv-stars">★★★★★</div>
-      <div class="rv-text">"Oopsie explains things in simple words."</div>
+      <div class="rv-text">"No jargon. No pressure. Just what I need and what I can skip."</div>
       <div class="rv-author">
         <div class="rv-av pc-a1">DW</div>
         <div>
@@ -1476,18 +1408,6 @@
         </div>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- ===== SEEN ON ===== -->
-<section class="seen-on">
-  <p>As seen on</p>
-  <div class="seen-logos">
-    <span>TikTok</span>
-    <span>Forbes</span>
-    <span>BuzzFeed</span>
-    <span>The Verge</span>
-    <span>Morning Brew</span>
   </div>
 </section>
 
