@@ -898,8 +898,8 @@
 
   /* ===== HERO: AS SEEN ON ===== */
   .hero-seen-on {
-    margin: 2px 0 22px;
-    animation: fadeUp 0.6s ease-out 0.4s both;
+    margin-top: 16px;
+    animation: fadeUp 0.6s ease-out 0.55s both;
   }
   .hero-seen-on p {
     font-size: 12px;
@@ -907,22 +907,34 @@
     letter-spacing: 2px;
     color: var(--text-light);
     font-weight: 600;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
   }
   .hero-seen-logos {
     display: flex;
     flex-wrap: wrap;
-    gap: 14px;
+    gap: 10px;
   }
-  .hero-seen-logos span {
-    font-size: 13px;
-    font-weight: 700;
-    color: var(--text-mid);
+  .hero-seen-logos .seen-logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 32px;
+    padding: 6px 12px;
     background: white;
     border: 1px solid var(--border);
-    border-radius: 100px;
-    padding: 6px 12px;
-    line-height: 1;
+    border-radius: 10px;
+  }
+  .hero-seen-logos .seen-logo img {
+    display: block;
+    height: 14px;
+    width: auto;
+    max-width: 118px;
+    object-fit: contain;
+    opacity: 0.9;
+  }
+  @media (max-width: 768px) {
+    .hero-seen-logos .seen-logo { height: 30px; padding: 6px 10px; }
+    .hero-seen-logos .seen-logo img { height: 12px; max-width: 96px; }
   }
 </style>
 </head>
@@ -973,20 +985,19 @@
 
     <a href="#quiz" class="hero-top-btn">Take the Quiz to See What You Need →</a>
 
-    <div class="hero-seen-on">
-      <p>As seen on</p>
-      <div class="hero-seen-logos">
-        <span>TikTok</span>
-        <span>Forbes</span>
-        <span>BuzzFeed</span>
-        <span>The Verge</span>
-        <span>Morning Brew</span>
-      </div>
-    </div>
-
     <div class="hero-trust">
       <div class="trust-item"><span class="trust-icon">◎</span> Plans from top insurers</div>
       <div class="trust-item"><span class="trust-icon">✓</span> 30-day support</div>
+    </div>
+
+    <div class="hero-seen-on">
+      <p>As seen on</p>
+      <div class="hero-seen-logos">
+        <span class="seen-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/d/db/Forbes_logo.svg" alt="Forbes logo"></span>
+        <span class="seen-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/BuzzFeed_Logo_10.2019.svg" alt="BuzzFeed logo"></span>
+        <span class="seen-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/0/05/The_Verge_wordmark_2022.svg" alt="The Verge logo"></span>
+        <span class="seen-logo"><img src="https://www.morningbrew.com/images/brand-logo.svg" alt="Morning Brew logo"></span>
+      </div>
     </div>
   </div>
 </section>
@@ -1087,7 +1098,7 @@
 <!-- ===== HOW IT WORKS ===== -->
 <section class="how" id="how">
   <div class="section-tag">How it works</div>
-  <h2>Faster than ordering DoorDash.<br>For real.</h2>
+  <h2>Faster than ordering DoorDash.</h2>
   <div class="how-steps">
     <div class="how-step">
       <div class="hs-num">1</div>
