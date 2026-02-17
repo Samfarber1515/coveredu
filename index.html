@@ -896,26 +896,33 @@
   }
   .ft-copy a { color: var(--purple); text-decoration: none; }
 
-  /* ===== SEEN ON ===== */
-  .seen-on {
-    padding: 64px 24px;
-    text-align: center;
-    border-top: 1px solid var(--border);
+  /* ===== HERO: AS SEEN ON ===== */
+  .hero-seen-on {
+    margin: 2px 0 22px;
+    animation: fadeUp 0.6s ease-out 0.4s both;
   }
-  .seen-on p {
-    font-size: 12px; text-transform: uppercase;
-    letter-spacing: 2px; color: var(--text-light);
-    font-weight: 600; margin-bottom: 24px;
+  .hero-seen-on p {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--text-light);
+    font-weight: 600;
+    margin-bottom: 12px;
   }
-  .seen-logos {
-    display: flex; justify-content: center;
-    align-items: center; gap: 40px; flex-wrap: wrap;
-    opacity: 0.3;
+  .hero-seen-logos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
   }
-  .seen-logos span {
-    font-family: 'Fraunces', serif;
-    font-size: 18px; font-weight: 800;
-    color: var(--text);
+  .hero-seen-logos span {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text-mid);
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    padding: 6px 12px;
+    line-height: 1;
   }
 </style>
 </head>
@@ -965,6 +972,17 @@
     <p class="hero-sub">Insurance can feel like a lot. Oopsie keeps it simple and helps you pick the right plan fast.</p>
 
     <a href="#quiz" class="hero-top-btn">Take the Quiz to See What You Need →</a>
+
+    <div class="hero-seen-on">
+      <p>As seen on</p>
+      <div class="hero-seen-logos">
+        <span>TikTok</span>
+        <span>Forbes</span>
+        <span>BuzzFeed</span>
+        <span>The Verge</span>
+        <span>Morning Brew</span>
+      </div>
+    </div>
 
     <div class="hero-trust">
       <div class="trust-item"><span class="trust-icon">◎</span> Plans from top insurers</div>
@@ -1390,18 +1408,6 @@
         </div>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- ===== SEEN ON ===== -->
-<section class="seen-on">
-  <p>As seen on</p>
-  <div class="seen-logos">
-    <span>TikTok</span>
-    <span>Forbes</span>
-    <span>BuzzFeed</span>
-    <span>The Verge</span>
-    <span>Morning Brew</span>
   </div>
 </section>
 
